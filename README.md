@@ -1,2 +1,2 @@
 # PolandProvincesGame
-Small game for learning Polish provinces
+Small game created for learning Polish provinces purpose

@@ -9,7 +9,6 @@ turtle.shape("provinces_img.gif")
 data = pandas.read_csv("provinces.csv")
 all_provinces = data.province.to_list()
 guessed_provinces = []
-missed_provinces = []
 
 
 def show_province():
@@ -30,10 +29,7 @@ while len(guessed_provinces) < 16:
         guessed_provinces.append(answer_province)
         show_province()
     elif answer_province == "exit":
-        for province in all_provinces:
-            if province not in guessed_provinces:
-                missed_provinces.append(province)
-
+        missed_provinces = [province for province in all_provinces if province not in guessed_provinces]
         missed_provinces_data = pandas.DataFrame(missed_provinces)
         missed_provinces_data.to_csv("provinces_to_learn.csv")
         break
